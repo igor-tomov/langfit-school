@@ -1,0 +1,89 @@
+ /**
+  * Variables
+  * Contains re-usable variables like colors, sizes, breakpoints etc.
+  * Normally, you don't have to change anything in essentials.css and general.css
+  * because you'll define the basic-values here.
+  */
+
+/* wp customizer
+/––––––––––––––––––––––––*/
+:root {
+  --c-light: #fff;
+  --c-dark: #101212;
+  --c-accent: #7A49B8;
+  --c-second: #8699BB;
+  --c-text: #fff;
+  --c-title: #fff;
+  --c-background: #101212;
+  --c-background-footer: #F2F2F3;
+  --c-accent-gradient: linear-gradient(85.71deg, #2F38FD 37.99%, #7A3BF2 94.58%);
+}
+
+/* fonts weight
+/––––––––––––––––––––––––*/
+$light:                       300;
+$regular:                     400;
+$medium:                      500;
+$semibold:                    600;
+$bold:                        700;
+$black:                       900;
+
+/* colors
+/––––––––––––––––––––––––*/
+$c-light: var(--c-light);
+$c-dark: var(--c-dark);
+$c-accent: var(--c-accent);
+$c-second: var(--c-second);
+$c-text: var(--c-text);
+$c-title: var(--c-title);
+$c-background: var(--c-background);
+$c-background-footer: var(--c-background-footer);
+$c-accent-gradient: var(--c-accent-gradient);
+$c-accent-gradien-shadow: rgba(25,67,255,0.3);
+
+/* fonts
+/––––––––––––––––––––––––*/
+$f-regular: 'Gilroy';
+$f-regular-size: 100%;
+$f-title: 'Gilroy';
+
+$s-10: 0.625rem;
+$s-11: 0.688rem;
+$s-12: 0.75rem;
+$s-14: 0.875rem;
+$s-16: 1rem;
+$s-18: 1.125rem;
+$s-20: 1.25rem;
+$s-21: 1.313rem;
+$s-24: 1.5rem;
+$s-26: 1.625rem;
+$s-30: 1.875rem;
+$s-34: 2.125rem;
+$s-44: 2.75rem;
+$s-70: 4.375rem;
+
+
+/* transitions
+/––––––––––––––––––––––––*/
+$transition_fast:            .3s;
+$transition_slow:            .7s;
+
+/* radius
+/––––––––––––––––––––––––*/
+$r-radius:                  10px;
+$r-radius-big:              40px;
+
+/* flex center
+/––––––––––––––––––––––––*/
+@mixin flexbox ($d, $dr, $ai, $js) {
+  display: flex;
+  flex-direction: $dr;
+  align-items: $ai;
+  justify-content: $js;
+}
+
+@mixin img-fit ($of) {
+  width: 100%;
+  height: 100%;
+  object-fit: $of;
+}
