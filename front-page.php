@@ -14,5 +14,5 @@
  */
 
 get_header();
-get_template_part('/template-parts/home/gsap');
+//get_template_part('/template-parts/home/gsap');
 get_footer();

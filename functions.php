@@ -214,8 +214,8 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Add post-type
  */
-require get_template_directory() . '/inc/post-type/post-team.php';
-require get_template_directory() . '/inc/post-type/post-news.php';
+// require get_template_directory() . '/inc/post-type/post-team.php';
+// require get_template_directory() . '/inc/post-type/post-news.php';
 
 /**
  * ACF settings
@@ -240,32 +240,3 @@ add_filter('excerpt_more', function ($more) {
 });
 
 add_filter('show_admin_bar', '__return_false');
-
-
-
-/*
-	Load more ajax
-*/
-if (!function_exists('posts_loadmore_ajax_handler')) {
-	function posts_loadmore_ajax_handler()
-	{
-		$params               = json_decode(stripslashes($_POST['query']), true);
-		$params['paged']       = $_POST['page'] + 1;
-		$params['post_status'] = 'publish';
-		$posts_load         = new WP_Query($params);
-		$posts_template     = 'template-parts/post/item';
-
-		if ($posts_load->have_posts()) {
-			while ($posts_load->have_posts()) :
-				$posts_load->the_post();
-				get_template_part($posts_template);
-			endwhile;
-		} else {
-			echo 'not found';
-		};
-
-		die();
-	}
-	add_action('wp_ajax_loadmorebutton', 'posts_loadmore_ajax_handler');
-	add_action('wp_ajax_nopriv_loadmorebutton', 'posts_loadmore_ajax_handler');
-}

@@ -12,7 +12,8 @@ vendor/
 
 # Project
 .sass-cache
-assets/dist/
+assets/dist/img/
+assets/dist/svg/
 bower_components/
 node_modules/
 

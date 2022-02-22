@@ -19,5 +19,5 @@
  */
 
 get_header();
-get_template_part('/template-parts/aging/gsap');
+//get_template_part('/template-parts/aging/gsap');
 get_footer();

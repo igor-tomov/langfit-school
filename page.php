@@ -16,10 +16,6 @@
 get_header();
 ?>
 
-<div class="fix-bg">
-	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/dist/img/agingbg.png" loading="lazy">
-</div>
-
 <section id="primary" class="site-main content section__page">
 	<div class="container">
 
@@ -37,10 +33,6 @@ get_header();
 		</div>
 	</div>
 </section><!-- #main -->
-
-<div class="footer__over">
-	<?php get_template_part('/template-parts/home/footer'); ?>
-</div>
 
 <?php
 get_footer();
