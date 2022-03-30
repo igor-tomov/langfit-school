@@ -52,8 +52,9 @@ if (!function_exists('ieverly_setup')) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'header_left' => esc_html__('Header left menu', 'ieverly'),
-				'header_right' => esc_html__('Header right menu', 'ieverly'),
+				'header' => esc_html__('Header menu', 'ieverly'),
+				'footer_menu_one' => esc_html__('Footer menu one', 'ieverly'),
+				'footer_menu_two' => esc_html__('Footer menu two', 'ieverly'),
 			)
 		);
 
@@ -136,7 +137,7 @@ function ieverly_wphead_cleanup()
 	remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
 	remove_action('wp_head', 'wp_oembed_add_host_js');
 	/* wpml dropdown css */
-	define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
+	//define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
 }
 add_action('after_setup_theme', 'ieverly_wphead_cleanup');
 
@@ -195,6 +196,7 @@ add_action('after_setup_theme', 'ieverly_content_width', 0);
  */
 function ieverly_scripts()
 {
+	if ( !is_admin() ) wp_deregister_script('jquery');
 	wp_enqueue_style('ieverly-style', get_stylesheet_uri(), array(), IEVERLY_VERSION);
 	/* wp_style_add_data('ieverly-style', 'rtl', 'replace'); */
 
@@ -214,8 +216,7 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Add post-type
  */
-// require get_template_directory() . '/inc/post-type/post-team.php';
-// require get_template_directory() . '/inc/post-type/post-news.php';
+require get_template_directory() . '/inc/post-type/post-reviews.php';
 
 /**
  * ACF settings
@@ -238,5 +239,3 @@ add_filter('excerpt_length', function () {
 add_filter('excerpt_more', function ($more) {
 	return '...';
 });
-
-add_filter('show_admin_bar', '__return_false');

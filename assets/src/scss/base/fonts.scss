@@ -1,60 +1,30 @@
-@font-face {
-  font-family: 'Gilroy';
-  src: url('assets/dist/fonts/Gilroy-Thin.woff2') format('woff2'),
-      url('assets/dist/fonts/Gilroy-Thin.woff') format('woff'),
-      url('assets/dist/fonts/Gilroy-Thin.svg#Gilroy-Thin') format('svg');
-  font-weight: 100;
+/**
+ * FONTS
+ * Contains all fonts that need to be hosted locally.
+ * » http://google-webfonts-helper.herokuapp.com/fonts (=> make sure paths start with 'assets/dist/fonts/' instead of '../fonts')
+ *
+ */
+
+ @font-face {
+  font-family: 'Nexa';
+  src: url('assets/dist/fonts/Nexa-Black.eot');
+  src: url('assets/dist/fonts/Nexa-Black.eot?#iefix') format('embedded-opentype'),
+      url('assets/dist/fonts/Nexa-Black.woff2') format('woff2'),
+      url('assets/dist/fonts/Nexa-Black.woff') format('woff'),
+      url('assets/dist/fonts/Nexa-Black.ttf') format('truetype');
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url('assets/dist/fonts/Gilroy-Light.woff2') format('woff2'),
-      url('assets/dist/fonts/Gilroy-Light.woff') format('woff'),
-      url('assets/dist/fonts/Gilroy-Light.svg#Gilroy-Light') format('svg');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('assets/dist/fonts/Gilroy-Regular.woff2') format('woff2'),
-      url('assets/dist/fonts/Gilroy-Regular.woff') format('woff'),
-      url('assets/dist/fonts/Gilroy-Regular.svg#Gilroy-Regular') format('svg');
+  font-family: 'Nexa';
+  src: url('assets/dist/fonts/Nexa-Regular.eot');
+  src: url('assets/dist/fonts/Nexa-Regular.eot?#iefix') format('embedded-opentype'),
+      url('assets/dist/fonts/Nexa-Regular.woff2') format('woff2'),
+      url('assets/dist/fonts/Nexa-Regular.woff') format('woff'),
+      url('assets/dist/fonts/Nexa-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('assets/dist/fonts/Gilroy-SemiBold.woff2') format('woff2'),
-      url('assets/dist/fonts/Gilroy-SemiBold.woff') format('woff'),
-      url('assets/dist/fonts/Gilroy-SemiBold.svg#Gilroy-SemiBold') format('svg');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('assets/dist/fonts/Gilroy-Medium.woff2') format('woff2'),
-      url('assets/dist/fonts/Gilroy-Medium.woff') format('woff'),
-      url('assets/dist/fonts/Gilroy-Medium.svg#Gilroy-Medium') format('svg');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Gilroy';
-  src: url('assets/dist/fonts/Gilroy-Bold.woff2') format('woff2'),
-      url('assets/dist/fonts/Gilroy-Bold.woff') format('woff'),
-      url('assets/dist/fonts/Gilroy-Bold.svg#Gilroy-Bold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-

@@ -1,67 +1,120 @@
+import Swiper from 'swiper/bundle';
 
-
-const menuButton = {
+const settings = {
 	/**
-	 * Toggle menu
+	 * General settings
 	 */
 	init() {
-		// Menu toggle button
-		function navigation_togge() {
-			const siteNavigation = document.querySelector('.site__header-nav-box');
-			const button = document.querySelector('.site__header-menu-button');
-			const menu = siteNavigation.getElementsByTagName('ul')[0];
+		/* Price toggle */
+		const pricesBoxs = document.querySelectorAll('.price__box');
+		function changePrice(currency) {
+			pricesBoxs.forEach((box) => {
+				const boxPrice = box.querySelector('.price');
+				const { uah } = boxPrice.dataset;
+				const { usd } = boxPrice.dataset;
+				const { eur } = boxPrice.dataset;
 
-			if (!menu.classList.contains('nav-menu')) {
-				menu.classList.add('nav-menu');
-			}
+				boxPrice.classList.add('load');
 
-			function toggled_menu() {
-				siteNavigation.classList.toggle('active');
-				const overflow = document.querySelector('body');
+				setTimeout(() => {
+					if (currency === 'uah') {
+						boxPrice.innerHTML = uah;
+					} else if (currency === 'usd') {
+						boxPrice.innerHTML = usd;
+					} else if (currency === 'eur') {
+						boxPrice.innerHTML = eur;
+					}
 
-				if (button.getAttribute('aria-expanded') === 'true') {
-					button.setAttribute('aria-expanded', 'false');
-					overflow.style.removeProperty('overflow');
-				} else {
-					button.setAttribute('aria-expanded', 'true');
-					overflow.style.overflow = 'hidden';
-				}
-			}
-
-			// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
-			button.addEventListener('click', () => {
-				toggled_menu();
+					boxPrice.classList.remove('load');
+				}, 300);
 			});
+		}
 
-			// Toogle when click # tag
-			// document.querySelectorAll('.site__header-nav-box a[href^="#"]').forEach((event) => {
-			// 	event.addEventListener('click', function () {
-			// 		siteNavigation.classList.remove('active');
-			// 		button.setAttribute('aria-expanded', 'false');
-			// 		document.querySelector('body').style.removeProperty('overflow');
-			// 	});
-			// });
+		const pricesButtons = document.querySelectorAll('.button__price');
+		pricesButtons.forEach((button) => {
+			button.addEventListener('click', (event) => {
+				const currency = button.dataset.price;
+				const { target } = event;
+				for (let i = 0; i < pricesButtons.length; i++) {
+					pricesButtons[i].classList.remove('active');
+				}
+				target.classList.add('active');
+				changePrice(currency);
+			});
+		});
 
-			const hasChildren = document.querySelectorAll('.menu-item-has-children > a');
-			if (hasChildren) {
-				hasChildren.forEach((children) => {
-					children.after(document.createElement('span'));
-				});
+		/* Swiper */
+		const homeSwiperBox = document.querySelector('.reviews__swiper');
+		if (homeSwiperBox) {
+			const homeSwiper = new Swiper(homeSwiperBox, {
+				slidesPerView: 1,
+				loop: true,
+				spaceBetween: 10,
+				speed: 1000,
+				threshold: 10,
+				autoHeight: true,
+				navigation: {
+					nextEl: '.arrow-right',
+					prevEl: '.arrow-left',
+				},
+				autoplay: {
+					delay: 4000,
+					disableOnInteraction: true
+				},
+				centeredSlides: true,
+				breakpoints: {
+					976: {
+						autoHeight: false
+					}
+				},
+			});
+		}
+	},
+};
 
-				const hasSpan = document.querySelectorAll('.menu-item-has-children > span');
-				hasSpan.forEach((event) => {
-					event.addEventListener('click', () => {
-						event.classList.toggle('active');
-						event.nextElementSibling.classList.toggle('active');
-					});
-				});
+const modal = {
+	/**
+	 * Toggle modal
+	 */
+	init() {
+		function modalToggle(elem) {
+			if (elem.getAttribute('aria-hidden') === 'true') {
+				elem.setAttribute('aria-hidden', 'false');
+			} else {
+				elem.setAttribute('aria-hidden', 'true');
 			}
 		}
-		navigation_togge();
+
+		const modalButtons = document.querySelectorAll('[data-modal]');
+		modalButtons.forEach((button) => {
+			const windowModal = document.querySelector(`[data-modal-window="${button.dataset.modal}"`);
+			if (windowModal) {
+				const buttonModalClose = windowModal.querySelector('.button__modal-close');
+				const modalOverlay = windowModal.querySelector('.modal__overlay');
+
+				buttonModalClose.addEventListener('click', () => {
+					windowModal.setAttribute('aria-hidden', 'true');
+				});
+
+				modalOverlay.addEventListener('click', () => {
+					windowModal.setAttribute('aria-hidden', 'true');
+				});
+
+				button.addEventListener('click', () => {
+					const modalFormName = button.dataset.form;
+					const modalForm = windowModal.querySelector('.field-form-name');
+					if (modalForm) {
+						modalForm.value = modalFormName;
+					}
+					modalToggle(windowModal);
+				});
+			}
+		});
 	},
 };
 
 
 document.addEventListener('DOMContentLoaded', () => {
-	menuButton.init();
+	modal.init();
+	settings.init();
 });
