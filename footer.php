@@ -79,7 +79,7 @@
                                     ?>
                                         <li>
                                             <a href="<?php echo $link; ?>" target="_blank">
-                                                <?php echo file_get_contents($icon['url']); ?>
+                                                <img src="<?php echo $icon['url']; ?>" loading="lazy">
                                             </a>
                                         </li>
                                     <?php endwhile; ?>

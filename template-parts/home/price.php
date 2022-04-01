@@ -12,7 +12,7 @@
     <?php while (have_rows('price')) : the_row();
         $title = get_sub_field('title');
     ?>
-        <section class="section__price content">
+        <section class="section__price content" id="pricing">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -23,9 +23,9 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="prices__list">
-                            <button type="button" class="button__price active" data-price="uah"><?php esc_html_e( 'UAH', 'ieverly' ); ?></button>
-                            <button type="button" class="button__price" data-price="usd"><?php esc_html_e( 'USD', 'ieverly' ); ?></button>
-                            <button type="button" class="button__price" data-price="eur"><?php esc_html_e( 'EUR', 'ieverly' ); ?></button>
+                            <button type="button" class="button__price active" data-price="eur"><?php esc_html_e('EUR', 'ieverly'); ?></button>
+                            <button type="button" class="button__price" data-price="usd"><?php esc_html_e('USD', 'ieverly'); ?></button>
+                            <button type="button" class="button__price" data-price="uah"><?php esc_html_e('UAH', 'ieverly'); ?></button>
                         </div>
                     </div>
                 </div>
@@ -47,14 +47,14 @@
                                 <div class="price__box">
                                     <?php if (!empty($discount)) : ?>
                                         <div class="discount">
-                                            <span><?php esc_html_e( 'Discount', 'ieverly' ); ?></span>
+                                            <span><?php esc_html_e('Discount', 'ieverly'); ?></span>
                                             <p><?php echo $discount; ?></p>
                                         </div>
                                     <?php endif; ?>
                                     <div class="num"><?php echo $num; ?></div>
                                     <div class="desc"><?php echo $desc; ?></div>
                                     <div class="time"><?php echo $time; ?></div>
-                                    <div class="price" data-uah="<?php echo $uah; ?>" data-usd="<?php echo $usd; ?>" data-eur="<?php echo $eur; ?>"><?php echo $uah; ?></div>
+                                    <div class="price" data-uah="<?php echo $uah; ?>" data-usd="<?php echo $usd; ?>" data-eur="<?php echo $eur; ?>"><?php echo $eur; ?></div>
                                     <div class="after"><?php echo $after; ?></div>
                                     <?php
                                     if ($link) :

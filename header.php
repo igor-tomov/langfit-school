@@ -10,6 +10,7 @@
  * @package ieverly
  */
 
+$army = get_field('army_support', 'options');
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -21,15 +22,42 @@
 
 	<?php wp_head(); ?>
 
+	<!-- Google Tag Manager -->
+	<script>
+		(function(w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(),
+				event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s),
+				dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-NBNMV83');
+	</script>
+	<!-- End Google Tag Manager -->
+
+
 </head>
 
 <body <?php body_class(); ?>>
+
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBNMV83" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
 
-		<a style="position: absolute; top: 0;left: 0; z-index: 10" target="_blank" href="https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi">
-			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/dist/img/stop-war-in-ukraine.png" loading="lazy">
-		</a>
+		<?php if ($army && in_array('Show badge', $army)) : ?>
+			<a style="position: absolute; top: 0;left: 0; z-index: 10" target="_blank" href="https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi">
+				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/dist/img/stop-war-in-ukraine.png" loading="lazy">
+			</a>
+		<?php endif; ?>
 
 		<header id="masthead" class="site__header">
 			<div class="container">
