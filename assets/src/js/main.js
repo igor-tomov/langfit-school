@@ -121,12 +121,25 @@ const modal = {
 					const modalFormName = button.dataset.form;
 					const modalForm = windowModal.querySelector('.field-form-name');
 					if (modalForm) {
-						modalForm.value = modalFormName;
+						modalForm.value = modalFormName + " " + window.location.search.slice(1);
 					}
 					modalToggle(windowModal);
 				});
 			}
 		});
+
+		const defaultContactForm = document.querySelector('.free__form form');
+
+		if (defaultContactForm) {
+			const inputFormName = defaultContactForm.querySelector('.field-form-name');
+
+			if (inputFormName) {
+				setTimeout(
+					() => inputFormName.value = 'Default form ' + window.location.search.slice(1),
+					3000
+				);
+			}
+		}
 	},
 };
 

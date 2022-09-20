@@ -24,6 +24,25 @@
                     </div>
                 </div>
 
+                <?php if (have_rows('roadmap')) : ?>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="lf-roadmap">
+                            <?php while (have_rows('roadmap')) : the_row();
+                                $title = get_sub_field('title');
+                                $icon = get_sub_field('icon');
+                            ?>
+                                <div class="lf-roadmap__step">
+                                    <img class="lf-roadmap__step-icon" src="<?php echo $icon['url']; ?>" loading="lazy">
+                                    <span class="lf-roadmap__step-circle"><?php echo get_row_index(); ?></span>
+                                    <p class="lf-roadmap__step-desc"><?php echo $title; ?></p>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
+
                 <div class="row">
                     <div class="col-md-6">
                         <h3 class="section__description"><?php echo $description; ?></h3>

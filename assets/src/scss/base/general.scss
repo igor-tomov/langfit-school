@@ -1069,25 +1069,19 @@ img[loading="lazy"] {
     }
   }
 
-  .text-name {
-    input {
-      background: url(assets/dist/svg/user.svg) no-repeat 1rem center $c-background;
-      background-size: 1.5rem;
-    }
+  input.field-name, input.field-age {
+    background: url(assets/dist/svg/user.svg) no-repeat 1rem center $c-background;
+    background-size: 1.5rem;
   }
 
-  .text-email {
-    input {
-      background: url(assets/dist/svg/email.svg) no-repeat 1rem center $c-background;
-      background-size: 1.4rem;
-    }
+  input.field-email {
+    background: url(assets/dist/svg/email.svg) no-repeat 1rem center $c-background;
+    background-size: 1.4rem;
   }
 
-  .text-tel {
-    input {
-      background: url(assets/dist/svg/phone.svg) no-repeat 1.2rem center $c-background;
-      background-size: 1rem;
-    }
+  input.field-tel {
+    background: url(assets/dist/svg/phone.svg) no-repeat 1.2rem center $c-background;
+    background-size: 1rem;
   }
 
   .wpcf7-form-control-wrap {

@@ -1,0 +1,88 @@
+.lf-roadmap {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+    padding: 0 40px;
+  }
+
+
+  &__step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 210px;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: row;
+      width: auto;
+      margin-bottom: 30px;
+      align-items: center;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 8px;
+      top: 84px;
+      left: 30px;
+      background: rgba(133, 62, 244, .4);
+
+      @include media-breakpoint-down(md) {
+        width: 8px;
+        height: 150%;
+        top: 26px;
+        left: 84px;
+      }
+    }
+  }
+
+  &__step-circle {
+    position: relative;
+    margin: 20px 0;
+    text-align: center;
+    color: var(--c-text);
+    font-size: $s-20;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: #ebebeb;
+    flex-shrink: 0;
+
+    @include media-breakpoint-down(md) {
+      margin: 0 20px;
+    }
+  }
+
+  &__step-desc {
+    width: 70%;
+    font-size: $s-18;
+  }
+}
+
+.lf-roadmap .lf-roadmap__step:first-child .lf-roadmap__step-circle {
+  background: var(--c-accent);
+
+  &:before {
+    position: absolute;
+    content: url(assets/dist/svg/trial_lesson_arrow.svg);
+    top: 90px;
+    left: 100px;
+
+    @include media-breakpoint-down(md) {
+      content: none;
+    }
+  }
+}
+
+.lf-roadmap .lf-roadmap__step:last-child {
+  &:before {
+    content: none !important;
+  }
+}

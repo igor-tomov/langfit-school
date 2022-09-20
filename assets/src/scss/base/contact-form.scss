@@ -1,0 +1,80 @@
+.wpcf7-form.sent > p {
+  display: none;
+}
+
+.wpcf7-form.sent .wpcf7-response-output {
+  text-align: center;
+  padding: 2rem;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.wpcf7-form.sent .wpcf7-response-output {
+  text-align: center;
+  padding: 2rem;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.wpcf7-form-control.wpcf7-textarea.field-comment {
+  background: #f6f6f7;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-size: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  width: 100%;
+  height: 100px;
+}
+
+.wpcf7-form-control.wpcf7-radio.field-radio {
+  display: flex;
+  flex-direction: column;
+}
+
+.wpcf7-form-control.wpcf7-radio.field-radio-contact-type {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  background: var(--c-background);
+}
+
+/* wpcf7-form Radio buttons */
+.wpcf7-form-control.wpcf7-radio.field-radio-contact-type .wpcf7-list-item,
+.wpcf7-form-control.wpcf7-radio.field-radio .wpcf7-list-item {
+  margin-left: 0;
+}
+
+.wpcf7-form-control.wpcf7-radio.field-radio-contact-type .wpcf7-list-item {
+  margin-right: 20px;
+}
+
+.wpcf7-form-control.wpcf7-radio.field-radio-contact-type .wpcf7-list-item label,
+.wpcf7-form-control.wpcf7-radio.field-radio .wpcf7-list-item label{
+  background: var(--c-background);
+  margin-left: 0;
+  padding-left: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.wpcf7-form input[type='radio'] {
+  width: auto;
+  margin-right: 15px;
+}
+
+.wpcf7-list-item-label {
+  font-family: Nexa;
+}
+
+.lt-form-terms-acceptance {
+  padding-top: 20px;
+  font-size: 12px;
+}
+
+/* END: wpcf7-form Radio buttons */
