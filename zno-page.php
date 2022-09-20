@@ -16,6 +16,7 @@
 get_header();
 get_template_part('/template-parts/home/hero');
 get_template_part('/template-parts/home/you-get');
+get_template_part('/template-parts/home/courses');
 get_template_part('/template-parts/home/director');
 get_template_part('/template-parts/home/free');
 get_footer();
