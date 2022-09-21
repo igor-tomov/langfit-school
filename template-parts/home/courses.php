@@ -2,7 +2,7 @@
 <?php while (have_rows('courses')) : the_row();
     $title = get_sub_field('title');
 ?>
-<section class="section__courses content">
+<section class="section__courses content" id="courses">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -40,7 +40,9 @@
                             <?php endwhile; ?>
                         </ul>
                         <h4><?php echo $pricing; ?></h4>
-                        <button class="button__cta button__get" type="button">Спробувати безкоштовно</button>
+                        <button class="button__cta button__get" type="button">
+                            <a href="#try-for-free">Спробувати безкоштовно</a>
+                        </button>
                     </div>
                 </div>
             </div>

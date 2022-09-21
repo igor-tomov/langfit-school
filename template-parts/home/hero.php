@@ -16,6 +16,7 @@
         $image = get_sub_field('image');
         $list_title = get_sub_field('list_title');
         $link = get_sub_field('button');
+        $anchor_link = get_sub_field('button_anchor');
     ?>
         <section class="section__hero content">
             <div class="container">
@@ -38,11 +39,18 @@
                         <?php endif; ?>
 
                         <?php
-                        if ($link) :
+                        if ($link && $link['url']) :
                             $link_url = $link['url'];
                             $link_title = $link['title'];
                         ?>
                             <button class="button__cta button__hero" data-form="<?php echo $title; ?>" type="button" data-modal="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></button>
+                        <?php elseif ($anchor_link && $anchor_link['url']) :
+                            $link_url = $anchor_link['url'];
+                            $link_title = $anchor_link['title'];
+                        ?>
+                            <button class="button__cta button__hero" type="button">
+                                <a href="<?php echo $link_url; ?>"><?php echo esc_html($link_title); ?></a>
+                            </button>
                         <?php endif; ?>
                     </div>
                     <div class="col-md-6">

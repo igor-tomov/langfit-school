@@ -72,7 +72,7 @@ $army = get_field('army_support', 'options');
 						wp_nav_menu(
 							array(
 								'container_class' => 'site__header-menu',
-								'theme_location' => 'header',
+								'theme_location' => $args['nav_menu'],
 							)
 						);
 						?>

@@ -16,7 +16,7 @@
         $form = get_sub_field('form_shortcode');
         $cover = get_sub_field('cover');
     ?>
-        <section class="section__free content">
+        <section class="section__free content" id="try-for-free">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

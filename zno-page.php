@@ -13,7 +13,7 @@
  * @package ieverly
  */
 
-get_header();
+get_header(null, array('nav_menu' => 'zno_header'));
 get_template_part('/template-parts/home/hero');
 get_template_part('/template-parts/home/you-get');
 get_template_part('/template-parts/home/courses');

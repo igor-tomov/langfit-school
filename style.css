@@ -1893,6 +1893,10 @@ img[loading=lazy] {
   background: var(--c-background);
   color: var(--c-text);
 }
+.button__cta > a {
+  color: inherit;
+  text-decoration: none;
+}
 
 /*==================================================================================
   Hero

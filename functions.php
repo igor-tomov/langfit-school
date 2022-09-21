@@ -53,6 +53,7 @@ if (!function_exists('ieverly_setup')) :
 		register_nav_menus(
 			array(
 				'header' => esc_html__('Header menu', 'ieverly'),
+				'zno_header' => esc_html__('ZNO Header menu', 'ieverly'),
 				'footer_menu_one' => esc_html__('Footer menu one', 'ieverly'),
 				'footer_menu_two' => esc_html__('Footer menu two', 'ieverly'),
 			)

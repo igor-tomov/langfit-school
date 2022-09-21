@@ -13,6 +13,7 @@
     <?php while (have_rows('you_get')) : the_row();
         $title = get_sub_field('title');
         $link = get_sub_field('button');
+        $anchor_link = get_sub_field('button_anchor');
     ?>
         <section class="section__you-get content">
             <div class="container">
@@ -47,11 +48,18 @@
                 <div class="row">
                     <div class="col-12">
                         <?php
-                        if ($link) :
+                        if ($link && $link['url']) :
                             $link_url = $link['url'];
                             $link_title = $link['title'];
                         ?>
-                            <button class="button__cta button__get" data-form="<?php echo $title; ?>" type="button" data-modal="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></button>
+                        <button class="button__cta button__get" data-form="<?php echo $title; ?>" type="button" data-modal="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></button>
+                        <?php elseif ($anchor_link && $anchor_link['url']) :
+                            $link_url = $anchor_link['url'];
+                            $link_title = $anchor_link['title'];
+                        ?>
+                        <button class="button__cta button__get" type="button">
+                            <a href="<?php echo $link_url; ?>"><?php echo esc_html($link_title); ?></a>
+                        </button>
                         <?php endif; ?>
                     </div>
                 </div>

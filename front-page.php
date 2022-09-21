@@ -13,10 +13,9 @@
  * @package ieverly
  */
 
-get_header();
+get_header(null, array('nav_menu' => 'header'));
 get_template_part('/template-parts/home/hero');
 get_template_part('/template-parts/home/you-get');
-get_template_part('/template-parts/home/director');
 get_template_part('/template-parts/home/reviews');
 get_template_part('/template-parts/home/price');
 get_template_part('/template-parts/home/free');
