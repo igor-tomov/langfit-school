@@ -1888,6 +1888,7 @@ img[loading=lazy] {
   letter-spacing: 0.05rem;
   -webkit-transition: all ease-out 0.3s;
   transition: all ease-out 0.3s;
+  text-decoration: none;
 }
 .button__cta:hover {
   background: var(--c-background);
@@ -2354,6 +2355,13 @@ img[loading=lazy] {
 /*==================================================================================
   Price
 ==================================================================================*/
+.price__box-list {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .price__box {
   position: relative;
   display: -webkit-box;
@@ -4525,6 +4533,11 @@ h2.section__title {
 .lf-course > .row {
   padding: 3em 4em;
 }
+@media (max-width: 991.98px) {
+  .lf-course > .row {
+    padding: 3em 2em;
+  }
+}
 .lf-course h3 {
   font-size: 2.125rem;
   font-weight: 900;
@@ -4570,6 +4583,11 @@ h2.section__title {
       -ms-flex-align: start;
           align-items: start;
 }
+@media (max-width: 767.98px) {
+  .lf-course__left-part {
+    margin-bottom: 2.5em;
+  }
+}
 .lf-course__right-part {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
@@ -4599,6 +4617,7 @@ h2.section__title {
 }
 @media (max-width: 767.98px) {
   .lf-course__info {
+    width: 100%;
     -webkit-align-self: center;
         -ms-flex-item-align: center;
             align-self: center;
@@ -4606,11 +4625,6 @@ h2.section__title {
 }
 .lf-course__info, .lf-course__info span, .lf-course__info p, .lf-course__info strong {
   font-size: 1.125rem;
-}
-@media (max-width: 767.98px) {
-  .lf-course__info, .lf-course__info span, .lf-course__info p, .lf-course__info strong {
-    font-size: 1rem;
-  }
 }
 .lf-course__info strong {
   padding-left: 5px;

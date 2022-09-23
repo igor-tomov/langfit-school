@@ -264,6 +264,7 @@ img[loading="lazy"] {
   cursor: pointer;
   letter-spacing: 0.05rem;
   transition: all ease-out $transition_fast;
+  text-decoration: none;
 
   &:hover {
     background: $c-background;
@@ -678,6 +679,10 @@ img[loading="lazy"] {
 /*==================================================================================
   Price
 ==================================================================================*/
+.price__box-list {
+  justify-content: center;
+}
+
 .price__box {
   position: relative;
   @include flexbox(flex, column, flex-start, flex-start);

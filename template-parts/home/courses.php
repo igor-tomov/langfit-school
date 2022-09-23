@@ -40,9 +40,9 @@
                             <?php endwhile; ?>
                         </ul>
                         <h4><?php echo $pricing; ?></h4>
-                        <button class="button__cta button__get" type="button">
-                            <a href="#try-for-free">Спробувати безкоштовно</a>
-                        </button>
+                        <a class="button__cta" href="#try-for-free">
+                            Спробувати безкоштовно
+                        </a>
                     </div>
                 </div>
             </div>

@@ -28,6 +28,10 @@ h2.section__title {
 
   & > .row {
     padding: 3em 4em;
+
+    @include media-breakpoint-down(lg) {
+      padding: 3em 2em;
+    }
   }
 
   h3 {
@@ -63,6 +67,10 @@ h2.section__title {
   &__left-part {
     justify-content: space-between;
     align-items: start;
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 2.5em;
+    }
   }
 
   &__right-part {
@@ -89,16 +97,13 @@ h2.section__title {
     border-radius: 0.5em;
 
     @include media-breakpoint-down(md) {
+      width: 100%;
       align-self: center;
     }
 
 
     &, span, p, strong {
       font-size: $s-18;
-
-      @include media-breakpoint-down(md) {
-        font-size: $s-16;
-      }
     }
 
     strong {

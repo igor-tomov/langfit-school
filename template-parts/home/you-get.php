@@ -57,9 +57,9 @@
                             $link_url = $anchor_link['url'];
                             $link_title = $anchor_link['title'];
                         ?>
-                        <button class="button__cta button__get" type="button">
-                            <a href="<?php echo $link_url; ?>"><?php echo esc_html($link_title); ?></a>
-                        </button>
+                        <a class="button__cta button__get" href="<?php echo $link_url; ?>">
+                            <?php echo esc_html($link_title); ?>
+                        </a>
                         <?php endif; ?>
                     </div>
                 </div>
