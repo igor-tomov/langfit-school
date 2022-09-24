@@ -5,7 +5,7 @@
 
   @include media-breakpoint-down(md) {
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 25px;
   }
 
 
@@ -35,7 +35,7 @@
 
       @include media-breakpoint-down(md) {
         width: 8px;
-        height: 150%;
+        height: 160%;
         top: 26px;
         left: 84px;
       }

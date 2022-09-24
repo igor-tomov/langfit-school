@@ -4403,6 +4403,10 @@ button.swiper-pagination-bullet {
   display: none;
 }
 
+.wpcf7-form input[type=radio] {
+  padding: 0.7em;
+}
+
 .wpcf7-form.sent .wpcf7-response-output {
   text-align: center;
   padding: 2rem;
@@ -4672,7 +4676,7 @@ h2.section__title {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 0 40px;
+    padding: 0 25px;
   }
 }
 .lf-roadmap__step {
@@ -4723,7 +4727,7 @@ h2.section__title {
 @media (max-width: 767.98px) {
   .lf-roadmap__step:before {
     width: 8px;
-    height: 150%;
+    height: 160%;
     top: 26px;
     left: 84px;
   }
